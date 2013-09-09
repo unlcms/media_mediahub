@@ -12,6 +12,15 @@
 class MediaMediaHubStreamWrapper extends MediaReadOnlyStreamWrapper {
   protected $base_url = 'http://mediahub.unl.edu/media';
 
+  /**
+   * Returns a url in the format "http://mediahub.unl.edu/media/182".
+   */
+  function interpolateUrl() {
+    if ($parameters = $this->get_parameters()) {
+      return $this->base_url . '/' . $parameters['media'];
+    }
+  }
+
   function getTarget($f) {
     return FALSE;
   }
