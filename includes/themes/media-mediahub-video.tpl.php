@@ -17,9 +17,5 @@
  * the JS will respect that when resizing later.
  */
 ?>
-<div class="media-mediahub-outer-wrapper" id="media-mediahub-<?php print $id; ?>" style="position:relative;">
-  <div class="media-mediahub-preview-wrapper" id="<?php print $wrapper_id; ?>">
-    <?php print $output; ?>
-  </div>
-</div>
 
+<?php print $output; ?>
