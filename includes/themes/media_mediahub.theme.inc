@@ -17,21 +17,6 @@ function media_mediahub_preprocess_media_mediahub_video(&$variables) {
   $variables['video_id'] = check_plain($parts['media']);
   $variables['query'] = array();
 
-  $variables['wrapper_id'] = 'media_mediahub_' . $variables['video_id'] . '_' . $variables['id'];
-
-  // Pass the settings to replace the object tag with an iframe.
-  $settings = array(
-    'media_mediahub' => array(
-      $variables['wrapper_id'] => array(
-        'video_id' => $variables['video_id'],
-        'id' => $variables['wrapper_id'],
-      ),
-    ),
-  );
-
-  drupal_add_js($settings, 'setting');
-  drupal_add_css(drupal_get_path('module', 'media_mediahub') . '/css/media_mediahub.css');
-
   $variables['url_api'] = 'media/' . $variables['video_id'] . '/file';
   $variables['url'] = url('http://mediahub.unl.edu/' . $variables['url_api'] , array('query' => $variables['query'], 'external' => TRUE, 'https' => TRUE));
 
