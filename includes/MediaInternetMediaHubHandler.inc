@@ -19,7 +19,7 @@ class MediaInternetMediaHubHandler extends MediaInternetBaseHandler {
   }
 
   public function valid_id($id) {
-    $url = 'http://mediahub.unl.edu/media/'. $id;
+    $url = 'https://mediahub.unl.edu/media/'. $id;
     $response = drupal_http_request($url, array('method' => 'HEAD'));
     if ($response->code != 200) {
       throw new MediaInternetValidationException(t('The MediaHub video ID is invalid or the video was deleted.'));
@@ -58,7 +58,7 @@ class MediaInternetMediaHubHandler extends MediaInternetBaseHandler {
   public function getMRSS() {
     $uri = $this->parse($this->embedCode);
     $video_id = arg(1, file_uri_target($uri));
-    $rss_url = url('http://mediahub.unl.edu/media/' . $video_id, array('query' => array('format' => 'xml')));
+    $rss_url = url('https://mediahub.unl.edu/media/' . $video_id, array('query' => array('format' => 'xml')));
     // @todo Use media_retrieve_xml() once it's upgraded to include elements
     //   from all namespaces, not just the document default namespace.
     $entry = simplexml_load_file($rss_url);
