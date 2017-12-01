@@ -4,7 +4,7 @@
  * @file media_mediahub/media_mediahub.module
  *
  * Media: MediaHub provides a stream wrapper and formatters for videos provided
- * by MediaHub, available at http://mediahub.unl.edu/.
+ * by MediaHub, available at https://mediahub.unl.edu/.
  *
  * @TODO:
  * Tie in MediaHub API.
