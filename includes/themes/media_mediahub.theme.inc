@@ -34,7 +34,7 @@ function media_mediahub_preprocess_media_mediahub_video(&$variables) {
 
   $variables['output'] = <<<OUTPUT
 <div class="wdn-responsive-embed wdn-aspect16x9">
-  <iframe src="http://mediahub.unl.edu/media/{$variables['video_id']}?format=iframe&autoplay=0" title="{$variables['video_id']}" allowfullscreen></iframe>
+  <iframe src="https://mediahub.unl.edu/media/{$variables['video_id']}?format=iframe&autoplay=0" title="{$variables['video_id']}" allowfullscreen></iframe>
 </div>
 OUTPUT;
 }
