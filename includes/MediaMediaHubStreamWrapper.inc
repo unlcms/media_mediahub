@@ -10,10 +10,10 @@
  *  $mediahub = new ResourceMediaHubStreamWrapper('mediahub://media/[video-code]');
  */
 class MediaMediaHubStreamWrapper extends MediaReadOnlyStreamWrapper {
-  protected $base_url = 'http://mediahub.unl.edu/media';
+  protected $base_url = 'https://mediahub.unl.edu/media';
 
   /**
-   * Returns a url in the format "http://mediahub.unl.edu/media/182".
+   * Returns a url in the format "https://mediahub.unl.edu/media/182".
    */
   function interpolateUrl() {
     if ($parameters = $this->get_parameters()) {
@@ -31,7 +31,7 @@ class MediaMediaHubStreamWrapper extends MediaReadOnlyStreamWrapper {
 
   function getOriginalThumbnailPath() {
     $parts = $this->get_parameters();
-    return 'http://mediahub.unl.edu/media/'. check_plain($parts['media']) .'/image';
+    return 'https://mediahub.unl.edu/media/'. check_plain($parts['media']) .'/image';
   }
 
   function getLocalThumbnailPath() {
