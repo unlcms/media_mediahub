@@ -33,8 +33,8 @@ function media_mediahub_preprocess_media_mediahub_video(&$variables) {
   drupal_add_css(drupal_get_path('module', 'media_mediahub') . '/css/media_mediahub.css');
 
   $variables['output'] = <<<OUTPUT
-<div class="wdn-responsive-embed wdn-aspect16x9">
-  <iframe src="https://mediahub.unl.edu/media/{$variables['video_id']}?format=iframe&autoplay=0" title="{$variables['video_id']}" allowfullscreen></iframe>
+<div style="padding-top: 56.25%; overflow: hidden; position:relative; -webkit-box-flex: 1; flex-grow: 1;">
+  <iframe  style="bottom: 0; left: 0; position: absolute; right: 0; top: 0; border: 0; height: 100%; width: 100%;" src="https://mediahub.unl.edu/media/{$variables['video_id']}?format=iframe&autoplay=0" title="{$variables['video_id']}" allow="autoplay" allowfullscreen></iframe>
 </div>
 OUTPUT;
 }
